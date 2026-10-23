@@ -1,0 +1,19 @@
+name = "ParameterEfficientFineTuning"
+uuid = "bb1006e0-74fe-4f1d-b45c-767ac2eb14b0"
+version = "0.1.0"
+authors = ["Jordan Benjamin"]
+
+[workspace]
+projects = ["test", "docs", "examples"]
+
+[deps]
+LowRankAdaptation = "42630db2-f68c-4dbc-8011-4aeb63f2007e"
+
+[weakdeps]
+
+[extensions]
+
+[sources]
+LowRankAdaptation = {path = "../LowRankAdaptation"}
+
+[compat]

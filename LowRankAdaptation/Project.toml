@@ -1,0 +1,17 @@
+name = "LowRankAdaptation"
+uuid = "42630db2-f68c-4dbc-8011-4aeb63f2007e"
+version = "0.1.0"
+authors = ["Jordan Benjamin"]
+
+[workspace]
+projects = ["test", "docs", "examples"]
+
+[deps]
+
+[weakdeps]
+
+[extensions]
+
+[sources]
+
+[compat]
