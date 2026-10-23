@@ -27,7 +27,7 @@ end
 function _row_norm(W0::AbstractMatrix, i::Integer)
     acc = 0.0
     @inbounds for j in axes(W0, 2)
-        v = Float64(W0[i, j])
+        v = W0[i, j]
         acc += v * v
     end
     return sqrt(acc)
@@ -70,7 +70,7 @@ segments(a::DoRA) = reduce(
     @inbounds for q in 1:r
         acc += θ[oB + i + (q - 1) * no] * θ[oA + q + (j - 1) * r]
     end
-    return Float64(@inbounds W0[i, j]) + s * acc
+    return @inbounds W0[i, j] + s * acc
 end
 
 function add_delta!(out::AbstractVector{<:AbstractMatrix}, a::DoRA, base::AbstractVector{<:AbstractMatrix}, θ::AbstractVector)
@@ -91,7 +91,7 @@ function add_delta!(out::AbstractVector{<:AbstractMatrix}, a::DoRA, base::Abstra
             end
             c = θ[om + i] / sqrt(nrm2)
             for j in 1:ni
-                W[i, j] += c * _dora_entry(W0, θ, i, j, oA, oB, no, r, s) - Float64(W0[i, j])
+                W[i, j] += c * _dora_entry(W0, θ, i, j, oA, oB, no, r, s) - W0[i, j]
             end
         end
     end
