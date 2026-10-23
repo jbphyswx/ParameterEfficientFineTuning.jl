@@ -8,12 +8,13 @@ projects = ["test", "docs", "examples"]
 
 [deps]
 LowRankAdaptation = "42630db2-f68c-4dbc-8011-4aeb63f2007e"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
 [weakdeps]
 
 [extensions]
 
 [sources]
-LowRankAdaptation = {path = "../LowRankAdaptation"}
+LowRankAdaptation = {path = "LowRankAdaptation"}
 
 [compat]
